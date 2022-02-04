@@ -8,13 +8,19 @@ namespace PDF_Generator.Utility
         public static string GetHTMLString(PDFData data)
         {
             var sb = new StringBuilder();
-            sb.Append(@"
+            sb.Append($@"
                         <html>
                             <head>
                             </head>
                             <body>
-                                <div><h1>First Name: " + data.FirstName + "</h1> </div>" + 
-                                "<div><h1>Surname: " + data.Surname + "</h1></div> <br> <div><h1>Body: " + data.Body + "</h1></div></body>");
+                                <h1>Employee Details</h1>
+                                <div>
+                                    <p><span>First Name:</span> {data.FirstName} </p>
+                                    <p><span>Surname:</span> {data.Surname}</p>
+                                    <p><span>Job Title:</span> {data.Body}</p>
+                                </div>
+                            </body>
+                         </html>");
             return sb.ToString();
         }
     }
