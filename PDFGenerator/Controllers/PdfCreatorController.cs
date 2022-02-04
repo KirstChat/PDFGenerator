@@ -3,6 +3,7 @@ using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using PDF_Generator.Utility;
+using PDFGenerator.Models;
 using System;
 using System.IO;
 
@@ -20,7 +21,7 @@ namespace PDF_Generator.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreatePDF([FromForm] string data)
+        public IActionResult CreatePDF([FromBody] PDFData data)
         {
             var documentId = Guid.NewGuid();
 

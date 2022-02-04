@@ -1,10 +1,11 @@
-﻿using System.Text;
+﻿using PDFGenerator.Models;
+using System.Text;
 
 namespace PDF_Generator.Utility
 {
     public static class TemplateGenerator
     {
-        public static string GetHTMLString(string data)
+        public static string GetHTMLString(PDFData data)
         {
             var sb = new StringBuilder();
             sb.Append(@"
@@ -12,8 +13,8 @@ namespace PDF_Generator.Utility
                             <head>
                             </head>
                             <body>
-                                <div class='header'><h1>This is the generated PDF report!!!</h1></div>
-                                <h1>"+ data + "</h1></body>");
+                                <div><h1>First Name: " + data.FirstName + "</h1> </div>" + 
+                                "<div><h1>Surname: " + data.Surname + "</h1></div> <br> <div><h1>Body: " + data.Body + "</h1></div></body>");
             return sb.ToString();
         }
     }
