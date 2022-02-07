@@ -31,6 +31,7 @@ namespace PDF_Generator.Controllers
                 Orientation = Orientation.Portrait,
                 PaperSize = PaperKind.A4,
                 Margins = new MarginSettings { Top = 10 },
+                
                 DocumentTitle = "PDF Report",
                 Out = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/" + documentId.ToString() + ".pdf"
             };
@@ -42,6 +43,7 @@ namespace PDF_Generator.Controllers
                 WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "styles.css") },
                 HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
                 FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Created On: " + DateTime.Now.ToShortDateString() }
+
             };
 
             var pdf = new HtmlToPdfDocument()
