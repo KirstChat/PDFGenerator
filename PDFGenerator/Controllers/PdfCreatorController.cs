@@ -57,5 +57,13 @@ namespace PDF_Generator.Controllers
             return Ok("Successfully created PDF document " + documentId.ToString() + ".pdf");
         }
 
+        [HttpGet("{documentId}")]
+        public IActionResult OpenPDF(string documentId)
+        {
+            string ReportURL = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/" + documentId + ".pdf";
+            byte[] FileBytes = System.IO.File.ReadAllBytes(ReportURL);
+            return File(FileBytes, "application/pdf");
+        }
+
     }
 }
