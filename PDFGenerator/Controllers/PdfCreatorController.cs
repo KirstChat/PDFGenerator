@@ -41,8 +41,8 @@ namespace PDF_Generator.Controllers
                 PagesCount = true,
                 HtmlContent = TemplateGenerator.GetHTMLString(data),
                 WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "styles.css") },
-                HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
-                FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Created On: " + DateTime.Now.ToShortDateString() }
+                HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]" },
+                FooterSettings = { FontName = "Arial", FontSize = 9, Center = "Created On: " + DateTime.Now.ToShortDateString() }
 
             };
 
